@@ -44,12 +44,7 @@ function FormTodo({ addTodo }) {
 }
 
 function App() {
-  const [todos, setTodos] = React.useState([
-    {
-      text: "This is a sampe todo",
-      isDone: false
-    }
-  ]);
+  const [todos, setTodos] = React.useState([]);
 
   const addTodo = text => {
     const newTodos = [...todos, { text }];
@@ -58,7 +53,7 @@ function App() {
 
   const markTodo = index => {
     const newTodos = [...todos];
-    newTodos[index].isDone = true;
+    newTodos[index].isDone = !newTodos[index].isDone;
     setTodos(newTodos);
   };
 
